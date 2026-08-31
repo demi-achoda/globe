@@ -130,9 +130,9 @@
   function vw(){ return window.innerWidth; }
   function vh(){ return window.innerHeight; }
 
-  /* =========================================================
+  /* ========================
      3. THREE SETUP
-     ========================================================= */
+     ======================== */
   const container = document.getElementById('scene-container');
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x05070d);
