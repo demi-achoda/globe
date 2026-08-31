@@ -1,0 +1,56 @@
+<!--
+  FILE: html/utils/jwt-decoder.html
+  Standalone tool page — no build step, shares the portfolio's dark-space palette.
+  Lives under html/utils and returns to the portfolio at ../index.html.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Decode JWT headers and payloads locally without sending tokens to a server." />
+<meta name="author" content="Saviour Achoda" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#05070d" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JWT Decoder — Saviour Achoda" />
+<meta property="og:description" content="Inspect JWT headers and payloads entirely inside your browser." />
+<title>JWT Decoder — Saviour Achoda</title>
+<link rel="stylesheet" href="/css/utils.css" />
+</head>
+<body>
+
+  <a class="back-link" href="/html/index.html">← Back to orbit</a>
+
+  <main>
+    <div class="eyebrow">Utils · JWT Decoder</div>
+    <h1>JWT Decoder</h1>
+    <p class="lede">Paste a token below — it's decoded entirely in your browser, nothing is
+    sent anywhere. This only decodes; verifying the signature needs the secret/key, which
+    obviously isn't something a public tool should ask you for.</p>
+
+    <textarea class="decoder-input" id="jwt-input" spellcheck="false"></textarea>
+
+    <div id="error" class="error hidden"></div>
+
+    <div id="result" class="result result-stack hidden">
+      <div class="panel">
+        <div class="panel-head"><h3>Header</h3><button class="action-btn" type="button" data-copy-target="header-json">Copy</button></div>
+        <pre id="header-json"></pre>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Payload</h3><button class="action-btn" type="button" data-copy-target="payload-json">Copy</button></div>
+        <pre id="payload-json"></pre>
+        <div id="exp-status" class="exp-status hidden"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Signature</h3></div>
+        <pre id="signature-raw"></pre>
+        <p class="hint-text">Not verified — that requires the signing secret, which stays on your server.</p>
+      </div>
+    </div>
+  </main>
+
+<script src="/js/utils/jwt-decoder.js"></script>
+</body>
+</html>

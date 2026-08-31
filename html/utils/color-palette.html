@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Generate harmonious color palettes locally in your browser." />
+<meta name="author" content="Saviour Achoda" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#05070d" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Color Palette Generator — Saviour Achoda" />
+<meta property="og:description" content="Generate harmonious, copy-ready color palettes locally in your browser." />
+<title>Color Palette Generator — Saviour Achoda</title>
+<link rel="stylesheet" href="/css/utils.css" />
+</head>
+<body>
+
+  <a class="back-link" href="/html/index.html">← Back to orbit</a>
+
+  <main>
+    <div class="eyebrow">Utils · Color Palette</div>
+    <h1>Color Palette Generator</h1>
+    <p class="lede">Choose a seed color and a harmony. The palette is generated locally in your browser, ready to copy into your next interface.</p>
+
+    <form class="tool-panel" id="palette-form">
+      <div class="form-grid">
+        <div class="control-field">
+          <label for="hex-input">Seed color</label>
+          <div class="color-input-row">
+            <input id="seed-color" type="color" value="#ffb454" aria-label="Choose a seed color" />
+            <input id="hex-input" type="text" value="#FFB454" maxlength="7" autocomplete="off" spellcheck="false" />
+          </div>
+        </div>
+
+        <div class="control-field">
+          <label for="harmony-select">Color harmony</label>
+          <select id="harmony-select">
+            <option value="analogous">Analogous</option>
+            <option value="complementary">Complementary</option>
+            <option value="triadic">Triadic</option>
+            <option value="split-complementary">Split complementary</option>
+            <option value="tetradic">Tetradic</option>
+            <option value="monochromatic">Monochromatic</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control-field">
+        <div class="control-label-row">
+          <label for="palette-size">Palette size</label>
+          <output class="inline-value" id="palette-size-value" for="palette-size">5 colors</output>
+        </div>
+        <input id="palette-size" type="range" min="3" max="8" value="5" />
+      </div>
+
+      <div class="button-row">
+        <button class="action-btn action-btn-primary" type="submit">Generate palette</button>
+        <button class="action-btn" id="randomize-seed" type="button">Randomize seed</button>
+      </div>
+    </form>
+
+    <div id="error" class="error hidden" role="alert"></div>
+
+    <section class="result" aria-labelledby="palette-heading">
+      <div class="section-head">
+        <h2 id="palette-heading">Generated palette</h2>
+        <button class="action-btn" id="copy-css" type="button">Copy CSS</button>
+      </div>
+      <div class="palette-grid" id="palette-grid"></div>
+      <p class="copy-status" id="copy-status" aria-live="polite"></p>
+
+      <div class="panel code-panel">
+        <div class="panel-head"><h3>CSS variables</h3></div>
+        <pre id="css-output"></pre>
+      </div>
+    </section>
+  </main>
+
+<script src="/js/utils/color-palette.js"></script>
+</body>
+</html>

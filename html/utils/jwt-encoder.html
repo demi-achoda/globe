@@ -1,0 +1,73 @@
+<!--
+  FILE: html/utils/jwt-encoder.html
+  Companion to jwt-decoder.html. Signs HS256/384/512 tokens entirely client-side
+  via the Web Crypto API — no backend, secret never leaves the browser.
+  RS/ES algorithms are out of scope here since those need a real key pair,
+  which is a different (and riskier) UX to build safely.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Build and sign HS256, HS384, or HS512 JSON Web Tokens locally with the Web Crypto API." />
+<meta name="author" content="Saviour Achoda" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#05070d" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JWT Encoder — Saviour Achoda" />
+<meta property="og:description" content="Build and sign HMAC JSON Web Tokens entirely inside your browser." />
+<title>JWT Encoder — Saviour Achoda</title>
+<link rel="stylesheet" href="/css/utils.css" />
+</head>
+<body>
+
+  <a class="back-link" href="/html/index.html">← Back to orbit</a>
+
+  <main>
+    <div class="eyebrow">Utils · JWT Encoder</div>
+    <h1>JWT Encoder</h1>
+    <p class="lede">Builds and signs a token entirely in your browser via the Web Crypto API —
+    the secret never leaves this page. Supports HS256 / HS384 / HS512 (read from the header's
+    <code>alg</code>). RS/ES algorithms need an actual key pair, which is a different, riskier
+    workflow than a paste-and-sign tool should offer.</p>
+
+    <div class="field-head">
+      <label for="header-input">Header</label>
+      <button class="action-btn" id="generate-header" type="button">Generate</button>
+    </div>
+    <textarea id="header-input" spellcheck="false">{
+  "alg": "HS256",
+  "typ": "JWT"
+}</textarea>
+
+    <label for="payload-input">Payload</label>
+    <textarea id="payload-input" spellcheck="false">{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+}</textarea>
+
+    <label for="secret-input">Secret</label>
+    <div class="secret-row">
+      <input type="password" id="secret-input" value="your-256-bit-secret" spellcheck="false" />
+      <button class="action-btn" id="generate-secret" type="button">Generate</button>
+      <button class="action-btn" id="toggle-secret" type="button">Show</button>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+
+    <div id="result" class="result hidden">
+      <div class="panel">
+        <div class="panel-head"><h3>Signed Token</h3><button class="action-btn" id="copy-token" type="button">Copy</button></div>
+        <pre id="token-output"></pre>
+      </div>
+      <a class="decoder-link" id="open-in-decoder" href="/html/utils/jwt-decoder.html">Open this token in the decoder →</a>
+      <p class="hint-text">The defaults above reproduce the classic demo token, byte for byte — a quick way to
+      confirm this is signing correctly before you swap in your own claims.</p>
+    </div>
+  </main>
+
+<script src="/js/utils/jwt-encoder.js"></script>
+</body>
+</html>
