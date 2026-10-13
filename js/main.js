@@ -123,7 +123,7 @@
 
   const R = 2;                 // globe radius
   const ZOOM_DIST = 3.3;       // camera distance when a section is open
-  const IDLE_ROTATE_SPEED = 0.30; // rad/sec — idle auto-spin
+  const IDLE_ROTATE_SPEED = 0.28; // rad/sec — idle auto-spin
   const IDLE_DELAY = 1500;     // ms of no input before auto-rotate resumes
   const DRAG_SENS = 0.0052;
   const TILT_MIN = Math.PI/2 - 0.35, TILT_MAX = Math.PI/2 + 0.35;
