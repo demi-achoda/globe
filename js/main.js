@@ -91,12 +91,14 @@
         <h1>Tiny tools, zero friction.</h1>
         <p>Small, free utilities — no sign-up, nothing tracked, works only in-browser except for the Social Media Downloader.</p>
         <div class="grid">
-          <div class="card" id="downloader-tool-link">
+          <a class="card" href="https://fetch.demiverse.link" id="downloader-tool-link">
             <h3>Social Media Downloader</h3>
-            <p>yt-dlp powered — Facebook, Instagram, TikTok (no watermark), X(twitter), YouTube, and more.</p>
-            <span class="tool-status">In development</span>
-          </div>
-          <a class="card tool-card" href="/html/utils/color-palette.html"><h3>Color Palette Generator</h3><p>Turn one seed color into a harmonious, copy-ready interface palette.</p><span class="tool-status">Open tool ↗</span></a>
+            <p>download media files from Facebook, Instagram, TikTok (no watermark), X(twitter), YouTube, and Pinterest in very high quality, original resolution.</p>
+            <span class="tool-status">Open tool ↗</span>
+          </a>
+          <a class="card tool-card" href="/html/utils/color-palette.html">
+            <h3>Color Palette Generator</h3><p>Turn one seed color into a harmonious, copy-ready interface palette.</p><span class="tool-status">Open tool ↗</span>
+          </a>
           <a class="card tool-card" href="/html/utils/password-generator.html"><h3>Password Generator</h3><p>Generate strong passwords with secure, in-browser randomness.</p><span class="tool-status">Open tool ↗</span></a>
           <a class="card tool-card" href="/html/utils/jwt-decoder.html"><h3>JWT Decoder</h3><p>Decode a token's header and payload, right in the browser.</p></a>
           <a class="card tool-card" href="/html/utils/jwt-encoder.html"><h3>JWT Encoder</h3><p>Build and sign a token (HS256/384/512), no backend required.</p></a>
@@ -121,7 +123,7 @@
 
   const R = 2;                 // globe radius
   const ZOOM_DIST = 3.3;       // camera distance when a section is open
-  const IDLE_ROTATE_SPEED = 0.50; // rad/sec — idle auto-spin
+  const IDLE_ROTATE_SPEED = 0.30; // rad/sec — idle auto-spin
   const IDLE_DELAY = 1500;     // ms of no input before auto-rotate resumes
   const DRAG_SENS = 0.0052;
   const TILT_MIN = Math.PI/2 - 0.35, TILT_MAX = Math.PI/2 + 0.35;
