@@ -91,7 +91,7 @@
         <h1>Tiny tools, zero friction.</h1>
         <p>Small, free utilities — no sign-up, nothing tracked, works only in-browser except for the Social Media Downloader.</p>
         <div class="grid">
-          <a class="card" href="https://fetch.demiverse.link" id="downloader-tool-link">
+          <a class="card tool-card" href="https://fetch.demiverse.link" id="downloader-tool-link">
             <h3>Social Media Downloader</h3>
             <p>download media files from Facebook, Instagram, TikTok (no watermark), X(twitter), YouTube, and Pinterest in very high quality, original resolution.</p>
             <span class="tool-status">Open tool ↗</span>
